@@ -13,7 +13,7 @@
 
 - 🤝 I’m looking for help with [GRDI](https://github.com/BiggiePete/GRDI)
 
-- 👨‍💻 All of my projects are available at [novanora.net](novanora.net)
+- 👨‍💻 All of my projects are available at [novanora.net](https://novanora.net)
 
 - 💬 Ask me about **How I got here**
 
