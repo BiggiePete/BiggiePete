@@ -3,17 +3,15 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=biggiepee&label=Snoopers&color=c810e0&style=flat" alt="biggiepee" /> </p>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=biggiepee" alt="biggiepee" /></a> </p>
-
-- 🔭 I’m currently working on [nova2]([PRIVATE])
+- 🔭 I’m currently working on **nova2**
 
 - 🌱 I’m currently learning **Embedded, ARM, KiCAD**
 
-- 👯 I’m looking to collaborate on [gitCAD]([PRIVATE])
+- 👯 I’m looking to collaborate on **gitCAD**
 
 - 🤝 I’m looking for help with [GRDI](https://github.com/BiggiePete/GRDI)
 
-- 👨‍💻 All of my projects are available at [novanora.net](https://novanora.net)
+- 👨‍💻 All of my projects are available at [https://novanora.net](https://novanora.net)
 
 - 💬 Ask me about **How I got here**
 
