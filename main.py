@@ -11,7 +11,7 @@ FONT_FILE_MONA = "./fonts/Inversionz.otf"
 
 
 def main():
-    t = gifos.Terminal(750, 500, 15, 15, FONT_FILE_BITMAP, 15)
+    t = gifos.Terminal(900, 500, 15, 15, FONT_FILE_BITMAP, 15)
     t.set_fps(15)
 
     t.gen_text("", 1, count=20)
@@ -171,11 +171,6 @@ def main():
     <img alt="GIFOS" src="{image.url}">
 </picture>
 <sub><i>Generated automatically using [x0rzavi/github-readme-terminal](https://github.com/x0rzavi/github-readme-terminal) on {time_now}</i></sub>
-
-<details>
-<summary>More details</summary>
-
-</details>
 </div>
 
 <!--  -->"""

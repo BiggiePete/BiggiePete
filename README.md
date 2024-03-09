@@ -6,9 +6,6 @@
 </picture>
 <sub><i>Generated automatically using [x0rzavi/github-readme-terminal](https://github.com/x0rzavi/github-readme-terminal) on Sat Mar 09 01:59:06 PM EST 2024</i></sub>
 
-<details>
-<summary>More details</summary>
-
 </details>
 </div>
 
