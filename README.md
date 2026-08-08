@@ -1,10 +1,10 @@
 <div align="justify">
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://i.ibb.co/x48z284/output-gif.gif">
-    <source media="(prefers-color-scheme: light)" srcset="https://i.ibb.co/x48z284/output-gif.gif">
-    <img alt="GIFOS" src="https://i.ibb.co/x48z284/output-gif.gif">
+    <source media="(prefers-color-scheme: dark)" srcset="https://i.ibb.co/dwTkL9wd/output-gif.gif">
+    <source media="(prefers-color-scheme: light)" srcset="https://i.ibb.co/dwTkL9wd/output-gif.gif">
+    <img alt="GIFOS" src="https://i.ibb.co/dwTkL9wd/output-gif.gif">
 </picture>
-<sub><i>Generated automatically using [x0rzavi/github-readme-terminal](https://github.com/x0rzavi/github-readme-terminal) on Thu Aug 06 10:07:55 PM EDT 2026</i></sub>
+<sub><i>Generated automatically using [x0rzavi/github-readme-terminal](https://github.com/x0rzavi/github-readme-terminal) on Fri Aug 07 08:55:11 PM EDT 2026</i></sub>
 </div>
 
 <!--  -->
