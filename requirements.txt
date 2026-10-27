@@ -1,0 +1,6 @@
+# Pinned so the daily build stays reproducible.
+# NOTE: gifos requires Pillow >=10.1,<11. Pillow 10.4.0 is the last 10.x and is
+# the newest release with prebuilt wheels for the Python versions we support
+# (3.12). Do not bump to 11.x without checking gifos compatibility.
+github-readme-terminal==0.0.3
+pillow==10.4.0

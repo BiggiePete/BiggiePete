@@ -1,1 +1,12 @@
 .env
+__pycache__/
+*.py[cod]
+
+# Local run artifacts
+output.gif
+frames/
+frame_*.png
+
+# GitHub Actions run logs downloaded for debugging (never commit these)
+logs_*.zip
+*.zip

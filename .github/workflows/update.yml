@@ -8,23 +8,44 @@ on:
 permissions:
   contents: write
 
+# Never let two daily runs fight over the same commit.
+concurrency:
+  group: update-readme
+  cancel-in-progress: false
+
 jobs:
   update-readme:
-    runs-on: ubuntu-latest
+    # Pin the OS image instead of ubuntu-latest: the -latest label has started
+    # rolling to Ubuntu 26.04, which ships Python 3.14.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           lfs: true
-      # - name: Set up Python 3.11
-      #   uses: actions/setup-python@v5
-      #   with:
-      #     python-version: '3.11'
+
+      # Pin the interpreter. gifos (github-readme-terminal) requires Pillow <11,
+      # and Pillow 10.4.0 has no wheels for Python 3.14, so on 3.14 pip tries to
+      # compile Pillow from source and dies on the missing libjpeg headers.
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -o Acquire::Retries=3
+          sudo apt-get install -y --no-install-recommends ffmpeg
 
       - name: Install dependencies
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: "1"
         run: |
-          sudo apt update && sudo apt install -y ffmpeg
           python -m pip install --upgrade pip
-          pip install github-readme-terminal
+          # Force a prebuilt Pillow wheel; never fall back to an sdist build.
+          python -m pip install --only-binary=Pillow "pillow==10.4.0"
+          python -m pip install -r requirements.txt
 
       - name: Run script
         run: python main.py
@@ -36,6 +57,14 @@ jobs:
 
       - name: Update readme
         run: |
+          if git diff --quiet -- README.md; then
+            echo "README.md unchanged, nothing to commit."
+            exit 0
+          fi
           git add README.md
-          git -c "user.name=bot" -c "user.email=bot@github.com" commit -m "Automatically updated on $(TZ='Asia/Kolkata' date)"
+          git -c "user.name=github-actions[bot]" \
+              -c "user.email=41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Automatically updated on $(TZ='Asia/Kolkata' date)"
+          # The schedule can race with a manual edit; retry on top of upstream.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push
